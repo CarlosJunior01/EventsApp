@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">EventsApp</string>
+
+    //InitialActivity Accessibility
+    <string name="initial_logo_accessibility">Logo Events contendo objetos coloridos em seu fundo</string>
+
 </resources>
