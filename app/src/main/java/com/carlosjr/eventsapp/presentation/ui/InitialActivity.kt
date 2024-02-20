@@ -19,7 +19,7 @@ class InitialActivity : AppCompatActivity() {
 
     private fun onLoadHomeActivity() {
         lifecycleScope.launch {
-            delay(3500L)
+            delay(3000L)
             openActivity(HomeActivity())
         }
     }
