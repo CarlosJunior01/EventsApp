@@ -6,13 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".presentation.ui.InitialActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+    <ImageView
+        android:layout_width="@dimen/margin_200dp"
+        android:layout_height="@dimen/margin_200dp"
+        android:src="@drawable/events_logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/initial_logo_accessibility"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
