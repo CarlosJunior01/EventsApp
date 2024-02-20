@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
 }
 
 android {
@@ -41,6 +42,7 @@ android {
 
 dependencies {
 
+    val hiltVersion = "2.48"
     val picassoVersion = "2.8"
     val retrofitVersion = "2.9.0"
     val okhttp3Version = "4.9.0"
@@ -59,7 +61,15 @@ dependencies {
     //Picasso
     implementation ("com.squareup.picasso:picasso:$picassoVersion")
 
+    //Hilt
+    implementation("com.google.dagger:hilt-android:$hiltVersion")
+    kapt("com.google.dagger:hilt-android-compiler:$hiltVersion")
+
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+}
+
+kapt {
+    correctErrorTypes = true
 }
