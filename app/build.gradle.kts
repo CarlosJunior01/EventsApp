@@ -41,6 +41,7 @@ android {
 
 dependencies {
 
+    val picassoVersion = "2.8"
     val retrofitVersion = "2.9.0"
     val okhttp3Version = "4.9.0"
 
@@ -54,6 +55,9 @@ dependencies {
     implementation ("com.squareup.retrofit2:retrofit:$retrofitVersion")
     implementation ("com.squareup.retrofit2:converter-gson:$retrofitVersion")
     implementation ("com.squareup.okhttp3:logging-interceptor:$okhttp3Version")
+
+    //Picasso
+    implementation ("com.squareup.picasso:picasso:$picassoVersion")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
