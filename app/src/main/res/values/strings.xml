@@ -4,4 +4,8 @@
     //InitialActivity Accessibility
     <string name="initial_logo_accessibility">Logo Events contendo objetos coloridos em seu fundo</string>
 
+    //HomeActivity
+    <string name="home_events_title">Events App</string>
+    <string name="home_events_category">Eventos</string>
+
 </resources>
