@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TitleSansSerif_White_36" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_36sp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="TitleSansSerif_32" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_32sp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="SubTitleSansSerif_White_26" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">@dimen/text_26sp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="SubTitleSansSerif_18" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">@dimen/text_18sp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="SubTitleSansSerif_White_Bold_26" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_26sp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="SubTitleSansSerif_24" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_24sp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="SubTitleSansSerifStartBold_24" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_24sp</item>
+        <item name="android:textAlignment">textStart</item>
+    </style>
+
+    <style name="TextSansSerif_outline_blue_12" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:background">@drawable/background_outline_blue</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/text_12sp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+</resources>
