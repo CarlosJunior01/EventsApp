@@ -2,6 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_view_container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginVertical="@dimen/margin_8dp"
@@ -24,7 +25,8 @@
             style="@style/TitleSansSerif_White_36"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_26dp"
+            android:layout_marginTop="@dimen/margin_36dp"
+            android:layout_marginStart="@dimen/margin_26dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="02" />
@@ -53,10 +55,14 @@
         <TextView
             android:id="@+id/text_view_event_name"
             style="@style/SubTitleSansSerif_White_Bold_26"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_24dp"
+            android:layout_marginStart="@dimen/margin_8dp"
+            android:layout_marginTop="@dimen/margin_12dp"
+            android:background="#00000000"
             app:layout_constraintBottom_toBottomOf="@+id/text_view_event_month"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/view"
             app:layout_constraintTop_toTopOf="@+id/text_view_event_day"
             tools:text="Event Name" />
@@ -66,28 +72,32 @@
             style="@style/SubTitleSansSerif_18"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/margin_24dp"
+            android:layout_marginTop="@dimen/margin_24dp"
+            android:layout_marginEnd="@dimen/margin_16dp"
             android:background="@drawable/background_outline_blue"
             android:paddingHorizontal="@dimen/margin_16dp"
             android:paddingVertical="@dimen/margin_4dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/text_view_event_day"
+            app:layout_constraintEnd_toEndOf="@+id/image_event"
+            app:layout_constraintTop_toTopOf="parent"
             tools:text="6 KM" />
 
         <ImageView
+            android:id="@+id/image_state_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_24dp"
+            android:layout_margin="@dimen/margin_16dp"
             android:src="@drawable/ic_check_circle_outline"
+            android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/image_share_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_26dp"
+            android:layout_margin="@dimen/margin_16dp"
             android:src="@drawable/ic_share_circle"
+            android:shadowColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
