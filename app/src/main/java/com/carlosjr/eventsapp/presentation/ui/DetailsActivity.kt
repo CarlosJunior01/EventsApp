@@ -1,12 +1,14 @@
 package com.carlosjr.eventsapp.presentation.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.carlosjr.eventsapp.R
+import androidx.appcompat.app.AppCompatActivity
+import com.carlosjr.eventsapp.databinding.ActivityDetailsBinding
 
 class DetailsActivity : AppCompatActivity() {
+
+    private val binding by lazy { ActivityDetailsBinding.inflate(layoutInflater) }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_details)
+        setContentView(binding.root)
     }
 }
