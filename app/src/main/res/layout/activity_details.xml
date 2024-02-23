@@ -8,7 +8,28 @@
 
     <include
         layout="@layout/custom_action_bar"
+        android:id="@+id/include_action_bar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        layout="@layout/custom_event_detail"
+        android:id="@+id/include"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_margin="@dimen/margin_8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include_action_bar" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_24dp"
+        app:backgroundTint="@color/green_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_input_add"
+        android:contentDescription="@string/details_check_in_accessibility" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
