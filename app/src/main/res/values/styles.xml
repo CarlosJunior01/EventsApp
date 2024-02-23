@@ -12,12 +12,36 @@
         <item name="android:shadowRadius">12</item>
     </style>
 
-    <style name="TitleSansSerif_32" parent="TextAppearance.AppCompat">
+    <style name="TitleSansSerifBlack_Start_32" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">sans-serif-black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_32sp</item>
+        <item name="android:textAlignment">textStart</item>
+    </style>
+
+    <style name="TitleSansSerif_Center_32" parent="TextAppearance.AppCompat">
         <item name="android:textColor">@color/black</item>
         <item name="android:fontFamily">sans-serif</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">@dimen/text_32sp</item>
         <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="TitleSansSerifGray_Start_18" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/gray_70</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_18sp</item>
+        <item name="android:textAlignment">textStart</item>
+    </style>
+
+    <style name="TitleSansSerifGray95_Start_16" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/gray_95</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_16sp</item>
+        <item name="android:textAlignment">textStart</item>
     </style>
 
     <style name="SubTitleSansSerif_White_26" parent="TextAppearance.AppCompat">
