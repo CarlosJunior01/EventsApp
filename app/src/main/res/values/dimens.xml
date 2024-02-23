@@ -19,6 +19,7 @@
     <dimen name="margin_128dp">128dp</dimen>
     <dimen name="margin_160dp">160dp</dimen>
     <dimen name="margin_200dp">200dp</dimen>
+    <dimen name="margin_220dp">220dp</dimen>
     <dimen name="margin_300dp">300dp</dimen>
 
     <dimen name="text_12sp">12sp</dimen>
