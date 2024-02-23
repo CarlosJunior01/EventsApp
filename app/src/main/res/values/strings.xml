@@ -8,4 +8,9 @@
     <string name="home_events_title">Events App</string>
     <string name="home_events_category">Eventos</string>
 
+    //Custom ActionBar
+    <string name="custom_actionbar_title">Custom ActionBar</string>
+    <string name="share_button_accessibility">Botão compartilhar</string>
+    <string name="back_button_accessibility">Botão voltar</string>
+
 </resources>
