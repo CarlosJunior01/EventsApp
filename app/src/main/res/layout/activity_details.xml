@@ -6,4 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".presentation.ui.DetailsActivity">
 
+    <include
+        layout="@layout/custom_action_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
