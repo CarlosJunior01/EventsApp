@@ -12,11 +12,9 @@ class EventsAdapter(
     val onClick: (EventsVO) -> Unit
 ) : RecyclerView.Adapter<EventsAdapter.EventViewHolder>() {
 
-    //private var movieList: List<Movie> = emptyList()
     private var eventsList: MutableList<EventsVO> = mutableListOf()
 
     fun addEventList(eventsList: List<EventsVO>) {
-        //this.movieList = movieList
         this.eventsList.addAll(eventsList)
         notifyDataSetChanged()
     }
@@ -31,11 +29,6 @@ class EventsAdapter(
 
         fun bind(events: EventsVO) {
             val imageUrl = events.image
-
-            //val ratingText = String.format(Locale.US, "%.1f",  movie.voteAverage)
-
-//            val ratingText = BigDecimal(events.voteAverage)
-//                .setScale(1, RoundingMode.HALF_UP).toString()
 
             binding.textViewEventName.text = events.title
             binding.textViewEventDay.text = "01"
