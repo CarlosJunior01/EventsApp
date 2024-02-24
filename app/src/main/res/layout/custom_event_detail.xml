@@ -31,8 +31,7 @@
             style="@style/TitleSansSerif_White_36"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_36dp"
-            android:layout_marginStart="@dimen/margin_26dp"
+            android:layout_margin="@dimen/margin_26dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="02" />
@@ -51,7 +50,7 @@
             android:id="@+id/view"
             android:layout_width="@dimen/margin_3dp"
             android:layout_height="0dp"
-            android:layout_marginStart="@dimen/margin_8dp"
+            android:layout_marginStart="@dimen/margin_12dp"
             android:layout_marginTop="@dimen/margin_8dp"
             android:background="@color/white"
             app:layout_constraintBottom_toBottomOf="@+id/text_view_event_month"
@@ -59,22 +58,7 @@
             app:layout_constraintTop_toTopOf="@+id/text_view_event_day" />
 
         <TextView
-            android:id="@+id/text_view_event_name"
-            style="@style/SubTitleSansSerif_White_Bold_26"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_8dp"
-            android:layout_marginTop="@dimen/margin_12dp"
-            android:background="#00000000"
-            app:layout_constraintBottom_toBottomOf="@+id/text_view_event_month"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/view"
-            app:layout_constraintTop_toTopOf="@+id/text_view_event_day"
-            tools:text="Event Name" />
-
-        <TextView
-            android:id="@+id/text_view_event_location"
+            android:id="@+id/text_view_event_price"
             style="@style/SubTitleSansSerif_18"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -85,7 +69,7 @@
             android:paddingVertical="@dimen/margin_4dp"
             app:layout_constraintEnd_toEndOf="@+id/image_event"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="6 KM" />
+            tools:text="R$ 0.00" />
 
         <TextView
             android:id="@+id/text_view_event_title"
@@ -104,10 +88,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/margin_24dp"
+            android:paddingVertical="@dimen/margin_6dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_view_event_title"
-            tools:text="Data: 01/02/2024" />
+            app:drawableStartCompat="@drawable/ic_calendar"
+            android:drawablePadding="@dimen/margin_8dp"
+            tools:text="Dia: 01 de fev de 2024 às 12:00" />
 
         <View
             android:id="@+id/view_divisor"
