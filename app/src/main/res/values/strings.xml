@@ -11,9 +11,11 @@
     //HomeActivity
     <string name="details_check_in_accessibility">Fazer check-in no evento</string>
 
+    //DetailsActivity
+    <string name="details_event_title">Detalhes do evento</string>
+
     //Custom ActionBar
     <string name="back_button_accessibility">Botão voltar</string>
-    <string name="custom_actionbar_title">Custom ActionBar</string>
     <string name="share_button_accessibility">Botão compartilhar</string>
 
 </resources>
