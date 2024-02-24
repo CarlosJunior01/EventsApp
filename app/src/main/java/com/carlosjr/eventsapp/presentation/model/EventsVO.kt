@@ -1,7 +1,9 @@
 package com.carlosjr.eventsapp.presentation.model
 
-import java.io.Serializable
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class EventsVO(
     val date: Long,
     val description: String,
@@ -11,4 +13,4 @@ data class EventsVO(
     val longitude: Double,
     val price: Double,
     val title: String
-) : Serializable
+) : Parcelable
