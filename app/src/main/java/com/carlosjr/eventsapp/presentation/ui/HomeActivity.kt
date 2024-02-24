@@ -19,7 +19,6 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        setupViews()
     }
 
     override fun onStart() {
@@ -38,7 +37,7 @@ class HomeActivity : AppCompatActivity() {
     private fun setupAdapter() {
         eventsAdapter = EventsAdapter { events ->
             val intent = Intent(this, DetailsActivity::class.java)
-            intent.putExtra("events", events)
+            intent.putExtra(EVENTS_HOME_ACTIVITY_PARAMETERS, events)
             startActivity(intent)
         }
     }
@@ -48,13 +47,7 @@ class HomeActivity : AppCompatActivity() {
         recyclerViewEvents.layoutManager = LinearLayoutManager(this@HomeActivity)
     }
 
-    private fun setupViews() = with(binding) {
-        /*var eventsResult = ""
-        eventsViewModel.eventsLiveData.observe(this@HomeActivity) { userList ->
-            userList.forEach { eventsVO ->
-                eventsResult += "[ID:${eventsVO.id}] - Title: ${eventsVO.title}\n"
-            }
-            textEventsCategory.text = eventsResult
-        }*/
+    companion object {
+        const val EVENTS_HOME_ACTIVITY_PARAMETERS = "events"
     }
 }
