@@ -4,32 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/white_pattern_background"
     tools:context=".presentation.ui.DetailsActivity">
 
     <include
-        layout="@layout/custom_action_bar"
         android:id="@+id/include_action_bar"
+        layout="@layout/custom_action_bar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <include
-        layout="@layout/custom_event_detail"
-        android:id="@+id/include"
-        android:layout_height="0dp"
+    <ScrollView
+        android:id="@+id/scroll_view_container"
         android:layout_width="match_parent"
-        android:layout_margin="@dimen/margin_8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include_action_bar" />
+        android:layout_height="0dp"
+        android:padding="@dimen/margin_12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include_action_bar">
+
+        <include
+            android:id="@+id/include_event_detail"
+            layout="@layout/custom_event_detail" />
+    </ScrollView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_24dp"
+        android:contentDescription="@string/details_check_in_accessibility"
         app:backgroundTint="@color/green_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@android:drawable/ic_input_add"
-        android:contentDescription="@string/details_check_in_accessibility" />
+        app:srcCompat="@android:drawable/ic_input_add" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
