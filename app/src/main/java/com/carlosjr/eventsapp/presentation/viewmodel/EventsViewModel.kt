@@ -3,8 +3,8 @@ package com.carlosjr.eventsapp.presentation.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.carlosjr.eventsapp.domain.usercase.GetEventsUseCase
-import com.carlosjr.eventsapp.presentation.model.EventsVO
+import com.carlosjr.eventsapp.domain.usecase.GetEventsUseCase
+import com.carlosjr.eventsapp.presentation.model.vo.EventsVO
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
