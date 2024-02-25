@@ -1,11 +1,11 @@
-package com.carlosjr.eventsapp.domain.usercase
+package com.carlosjr.eventsapp.domain.usecase
 
 import com.carlosjr.eventsapp.domain.bo.toEventsVO
 import com.carlosjr.eventsapp.domain.repository.EventsRepository
 import com.carlosjr.eventsapp.presentation.model.EventsVO
 import javax.inject.Inject
 
-class GetEventsUseCaseImp@Inject constructor(
+class GetEventsUseCaseImpl@Inject constructor(
     private val eventsRepository: EventsRepository
 ): GetEventsUseCase {
 
