@@ -1,4 +1,4 @@
-package com.carlosjr.eventsapp.domain.usercase
+package com.carlosjr.eventsapp.domain.usecase
 
 import com.carlosjr.eventsapp.presentation.model.EventsVO
 
