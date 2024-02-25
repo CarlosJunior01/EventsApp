@@ -19,6 +19,7 @@ import com.carlosjr.eventsapp.helper.extensions.monetaryFormat
 import com.carlosjr.eventsapp.helper.extensions.parcelable
 import com.carlosjr.eventsapp.helper.extensions.setVisible
 import com.carlosjr.eventsapp.helper.extensions.setupPicassoImage
+import com.carlosjr.eventsapp.helper.extensions.toast
 import com.carlosjr.eventsapp.presentation.model.viewstate.DetailsViewState.ErrorState
 import com.carlosjr.eventsapp.presentation.model.viewstate.DetailsViewState.LoadingState
 import com.carlosjr.eventsapp.presentation.model.viewstate.DetailsViewState.SuccessState
@@ -61,7 +62,6 @@ class DetailsActivity : AppCompatActivity() {
                 when (viewState) {
                     is LoadingState -> {
                         binding.customLoading.loadingContainer.setVisible(show = true)
-                        Log.i("TAG","LoadingState()")
                     }
                     is SuccessState -> {
                         binding.customLoading.loadingContainer.setVisible(show = false)
@@ -87,14 +87,20 @@ class DetailsActivity : AppCompatActivity() {
         }
         customDialog.setupListeners(
             onBtnConfirmClick = {
-                detailsViewModel.sendCheckIn(
-                    CheckInRequest(
-                        eventId = eventsResult?.id ?: ZERO_VALUE,
-                        name = customDialog.getInputName(),
-                        email = customDialog.getInputEmail(),
-                    )
-                )
-                hideKeyboard(view = binding.root)
+                when {
+                    customDialog.getInputName().isEmpty() -> { toast(getString(R.string.enter_valid_name)) }
+                    customDialog.getInputEmail().isEmpty() -> { toast(getString(R.string.enter_valid_email))}
+                    else -> {
+                        detailsViewModel.sendCheckIn(
+                            CheckInRequest(
+                                eventId = eventsResult?.id ?: ZERO_VALUE,
+                                name = customDialog.getInputName(),
+                                email = customDialog.getInputEmail(),
+                            )
+                        )
+                        hideKeyboard(view = binding.root)
+                    }
+                }
             },
             onBtnCancelClick = {
                 customDialog.setVisible(show = false)
