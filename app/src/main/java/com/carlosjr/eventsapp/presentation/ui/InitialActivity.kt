@@ -23,4 +23,9 @@ class InitialActivity : AppCompatActivity() {
             openActivity(HomeActivity())
         }
     }
+
+    override fun onStop() {
+        super.onStop()
+        finish()
+    }
 }
