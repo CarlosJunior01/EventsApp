@@ -42,10 +42,9 @@ class CheckInUseCaseTest {
     @Test(expected = Exception::class)
     fun `checkIn throws generic exception`(): Unit = runBlocking {
 
-        //GIVEN
         coEvery { repository.checkInEvent(getCheckInRequestDummy()) } throws Exception()
             .apply {
-                repository.checkInEvent(getCheckInRequestDummy())
+                checkInUseCase.invoke(getCheckInRequestDummy())
             }
     }
 }
