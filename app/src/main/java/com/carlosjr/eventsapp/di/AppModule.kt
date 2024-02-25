@@ -1,7 +1,7 @@
 package com.carlosjr.eventsapp.di
 
 import com.carlosjr.eventsapp.data.remote.EventsAPI
-import com.carlosjr.eventsapp.data.repository.EventsRepositoryImp
+import com.carlosjr.eventsapp.data.repository.EventsRepositoryImpl
 import com.carlosjr.eventsapp.data.repository.EventsRepository
 import com.carlosjr.eventsapp.domain.usecase.CheckInUseCase
 import com.carlosjr.eventsapp.domain.usecase.GetEventsUseCase
@@ -46,7 +46,7 @@ object AppModule {
 
     @Provides
     fun provideEventsRepository(api: EventsAPI): EventsRepository {
-        return EventsRepositoryImp(api)
+        return EventsRepositoryImpl(api)
     }
 
     @Provides

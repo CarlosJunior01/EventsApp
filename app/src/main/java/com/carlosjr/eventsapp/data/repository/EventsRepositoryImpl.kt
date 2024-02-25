@@ -14,7 +14,7 @@ import kotlinx.coroutines.flow.flowOn
 import retrofit2.Response
 import javax.inject.Inject
 
-class EventsRepositoryImp @Inject constructor(
+class EventsRepositoryImpl @Inject constructor(
     private val api: EventsAPI
 ): EventsRepository {
     override suspend fun getEvents(): List<EventsBO> {
