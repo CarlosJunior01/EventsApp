@@ -6,6 +6,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.carlosjr.eventsapp.databinding.ActivityHomeBinding
+import com.carlosjr.eventsapp.helper.extensions.setVisible
 import com.carlosjr.eventsapp.presentation.viewmodel.EventsViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -19,6 +20,11 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        setupViews()
+    }
+
+    private fun setupViews() = with(binding) {
+        customLoading.loadingContainer.setVisible(show = true)
     }
 
     override fun onStart() {
@@ -28,9 +34,10 @@ class HomeActivity : AppCompatActivity() {
         setupObserve()
     }
 
-    private fun setupObserve() {
+    private fun setupObserve() = with(binding) {
         eventsViewModel.eventsLiveData.observe(this@HomeActivity) { eventsVO ->
             eventsAdapter?.addEventList(eventsList = eventsVO)
+            customLoading.loadingContainer.setVisible(show = true)
         }
     }
 
