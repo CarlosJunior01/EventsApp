@@ -1,4 +1,4 @@
-package com.carlosjr.eventsapp.presentation.model
+package com.carlosjr.eventsapp.presentation.model.vo
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

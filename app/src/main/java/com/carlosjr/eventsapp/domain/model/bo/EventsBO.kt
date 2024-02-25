@@ -1,6 +1,6 @@
-package com.carlosjr.eventsapp.domain.bo
+package com.carlosjr.eventsapp.domain.model.bo
 
-import com.carlosjr.eventsapp.presentation.model.EventsVO
+import com.carlosjr.eventsapp.presentation.model.vo.EventsVO
 
 data class EventsBO(
     val date: Long,
