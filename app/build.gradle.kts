@@ -46,6 +46,7 @@ dependencies {
 
     val hiltVersion = "2.48"
     val picassoVersion = "2.8"
+    val lottieVersion = "5.2.0"
     val retrofitVersion = "2.9.0"
     val okhttp3Version = "4.9.0"
 
@@ -62,6 +63,9 @@ dependencies {
 
     //Picasso
     implementation ("com.squareup.picasso:picasso:$picassoVersion")
+
+    //Lottie
+    implementation ("com.airbnb.android:lottie:$lottieVersion")
 
     //Hilt
     implementation("com.google.dagger:hilt-android:$hiltVersion")
