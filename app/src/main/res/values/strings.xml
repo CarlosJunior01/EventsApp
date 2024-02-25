@@ -26,4 +26,9 @@
     <string name="custom_dialog_check_in">CheckIn</string>
     <string name="custom_dialog_close">Fechar</string>
 
+    //Error Messages
+    <string name="text_error_processing">Erro no Processamento</string>
+    <string name="text_error_retry">Erro no Processamento./nTente novamente</string>
+    <string name="message_error_timeout">Problemas na comunicação.\nTente Novamente</string>
+
 </resources>
