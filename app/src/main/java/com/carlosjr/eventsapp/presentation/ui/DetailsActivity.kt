@@ -1,17 +1,40 @@
 package com.carlosjr.eventsapp.presentation.ui
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.carlosjr.eventsapp.R
+import com.carlosjr.eventsapp.data.dto.CheckInRequest
 import com.carlosjr.eventsapp.databinding.ActivityDetailsBinding
+import com.carlosjr.eventsapp.helper.Constants.SEND_INTENT_TEXT_TYPE
+import com.carlosjr.eventsapp.helper.extensions.formatDate
+import com.carlosjr.eventsapp.helper.extensions.formatDateDay
+import com.carlosjr.eventsapp.helper.extensions.formatDateMonth
+import com.carlosjr.eventsapp.helper.extensions.formatTime
+import com.carlosjr.eventsapp.helper.extensions.hideKeyboard
+import com.carlosjr.eventsapp.helper.extensions.monetaryFormat
 import com.carlosjr.eventsapp.helper.extensions.parcelable
-import com.carlosjr.eventsapp.presentation.model.EventsVO
+import com.carlosjr.eventsapp.helper.extensions.setVisible
+import com.carlosjr.eventsapp.helper.extensions.setupPicassoImage
+import com.carlosjr.eventsapp.presentation.model.viewstate.DetailsViewState.ErrorState
+import com.carlosjr.eventsapp.presentation.model.viewstate.DetailsViewState.LoadingState
+import com.carlosjr.eventsapp.presentation.model.viewstate.DetailsViewState.SuccessState
+import com.carlosjr.eventsapp.presentation.model.vo.EventsVO
 import com.carlosjr.eventsapp.presentation.ui.HomeActivity.Companion.EVENTS_HOME_ACTIVITY_PARAMETERS
-import com.squareup.picasso.Picasso
+import com.carlosjr.eventsapp.presentation.viewmodel.DetailsViewModel
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class DetailsActivity : AppCompatActivity() {
 
     private val binding by lazy { ActivityDetailsBinding.inflate(layoutInflater) }
+    private val detailsViewModel: DetailsViewModel by viewModels()
+    private var eventsResult: EventsVO? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -22,13 +45,34 @@ class DetailsActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         getExtras()
+        setupObserve()
     }
 
     private fun getExtras()  {
         intent.extras?.let {
             val eventsResult = intent.parcelable<EventsVO>(EVENTS_HOME_ACTIVITY_PARAMETERS)
+            this.eventsResult = eventsResult
             setupResultView(event = eventsResult)
         }
+    }
+
+    private fun setupObserve() = lifecycleScope.launch {
+            detailsViewModel.eventsStateFlow.collect { viewState ->
+                when (viewState) {
+                    is LoadingState -> {
+                        binding.customLoading.loadingContainer.setVisible(show = true)
+                        Log.i("TAG","LoadingState()")
+                    }
+                    is SuccessState -> {
+                        binding.customLoading.loadingContainer.setVisible(show = false)
+                        binding.customDialog.setAnimationDialog(animation = R.raw.loading_success, isShow = true)
+                    }
+                    is ErrorState -> {
+                        binding.customLoading.loadingContainer.setVisible(show = false)
+                        binding.customDialog.setAnimationDialog(animation = R.raw.loading_error, isShow = true)
+                    }
+                }
+            }
     }
 
     private fun setupViews() = with(binding) {
@@ -37,16 +81,78 @@ class DetailsActivity : AppCompatActivity() {
 
     private fun setupListeners() = with(binding) {
         includeActionBar.primaryActionButton.setOnClickListener { finish() }
+        includeActionBar.secondaryActionButton.setOnClickListener { shareEvent() }
+        floatingActionButton.setOnClickListener {
+            customDialog.setVisible(show = true)
+        }
+        customDialog.setupListeners(
+            onBtnConfirmClick = {
+                detailsViewModel.sendCheckIn(
+                    CheckInRequest(
+                        eventId = eventsResult?.id ?: ZERO_VALUE,
+                        name = customDialog.getInputName(),
+                        email = customDialog.getInputEmail(),
+                    )
+                )
+                hideKeyboard(view = binding.root)
+            },
+            onBtnCancelClick = {
+                customDialog.setVisible(show = false)
+                hideKeyboard(view = binding.root)
+            },
+            onBtnCloseClick = {
+                customDialog.setVisible(show = false)
+                customDialog.setAnimationDialog(isShow = false)
+            }
+        )
     }
 
     private fun setupResultView(event: EventsVO?) = with(binding) {
-        includeEventDetail.textViewEventTitle.text = event?.title
-        includeEventDetail.textViewEventDescription.text = event?.description
-        includeEventDetail.textViewEventDate.text = event?.date.toString()
+        val eventDate = event?.date.toString().dropLast(LENGTH_THREE).toLong()
+        val treatedDate = getDateTime(eventDate)
 
-        Picasso.get()
-            .load(event?.image)
-            .error(R.drawable.tech_background)
-            .into(includeEventDetail.imageEvent)
+        setupEventDetail(event, eventDate, treatedDate)
+        setupCustomDialog(event)
+        setupPicassoImage(image = event?.image, error = R.drawable.tech_background, view = includeEventDetail.imageEvent)
+    }
+
+    private fun setupEventDetail(event: EventsVO?, eventDate: Long, treatedDate: String) = with(binding) {
+        includeEventDetail.apply {
+            textViewEventTitle.text = event?.title
+            textViewEventDescription.text = event?.description
+            textViewEventDate.text = treatedDate
+            textViewEventDay.text = formatDateDay(eventDate)
+            textViewEventMonth.text = formatDateMonth(eventDate)
+            textViewEventPrice.text = event?.price?.monetaryFormat()
+        }
+    }
+
+    private fun setupCustomDialog(event: EventsVO?) = with(binding) {
+        customDialog.apply {
+            setDialogTitle(event?.title)
+            setDialogBtnConfirm(getString(R.string.custom_dialog_check_in))
+            setDialogBtnCancel(getString(R.string.custom_dialog_close))
+        }
+
+    }
+
+    private fun shareEvent() {
+        val sendMessage = getString(R.string.details_send_event_message, eventsResult?.title, eventsResult?.description)
+        val sendIntent = Intent()
+        sendIntent.setAction(Intent.ACTION_SEND)
+        sendIntent.putExtra(Intent.EXTRA_TEXT, sendMessage)
+        sendIntent.setType(SEND_INTENT_TEXT_TYPE)
+        startActivity(sendIntent)
+    }
+
+    private fun getDateTime(timestamp: Long): String {
+        val date = formatDate(timestamp = timestamp)
+        val time = formatTime(timestamp = timestamp)
+        return getString(R.string.details_event_date, date, time)
+    }
+
+    companion object {
+        private const val ZERO_VALUE = "0"
+        private const val LENGTH_THREE = 3
     }
 }

@@ -19,7 +19,6 @@ inline fun <reified T : Throwable> handleTimeoutApiError(
             when (error.code()) {
                 HttpURLConnection.HTTP_GATEWAY_TIMEOUT,
                 HttpURLConnection.HTTP_CLIENT_TIMEOUT -> timeoutMessage
-
                 else -> UiText.DynamicString(error.message())
             }
         }
