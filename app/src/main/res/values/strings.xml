@@ -25,6 +25,7 @@
     <string name="custom_dialog_email">Email</string>
     <string name="custom_dialog_check_in">CheckIn</string>
     <string name="custom_dialog_close">Fechar</string>
+    <string name="dialog_close_button_accessibility">Botão fechar caixa de diáligo</string>
 
     //Error Messages
     <string name="text_error_processing">Erro no Processamento</string>
