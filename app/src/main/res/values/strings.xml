@@ -31,4 +31,8 @@
     <string name="text_error_retry">Erro no Processamento./nTente novamente</string>
     <string name="message_error_timeout">Problemas na comunicação.\nTente Novamente</string>
 
+    //Alert Messages
+    <string name="enter_valid_name">Insira um nome válido.</string>
+    <string name="enter_valid_email">Insira um email válido.</string>
+
 </resources>
