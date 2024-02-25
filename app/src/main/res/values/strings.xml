@@ -13,9 +13,17 @@
 
     //DetailsActivity
     <string name="details_event_title">Detalhes do evento</string>
+    <string name="details_event_date">%s às %s</string>
+    <string name="details_send_event_message">Evento: %s \nDescrição: %s</string>
 
     //Custom ActionBar
     <string name="back_button_accessibility">Botão voltar</string>
     <string name="share_button_accessibility">Botão compartilhar</string>
+
+    //Custom Dialog
+    <string name="custom_dialog_name">Nome</string>
+    <string name="custom_dialog_email">Email</string>
+    <string name="custom_dialog_check_in">CheckIn</string>
+    <string name="custom_dialog_close">Fechar</string>
 
 </resources>
