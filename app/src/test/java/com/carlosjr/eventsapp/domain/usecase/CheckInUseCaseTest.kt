@@ -25,7 +25,7 @@ class CheckInUseCaseTest {
     }
 
     @Test
-    fun `when checkIn return success with a events list`() = runBlocking {
+    fun `when checkIn return success`() = runBlocking {
 
         //GIVEN
         coEvery {
@@ -40,10 +40,10 @@ class CheckInUseCaseTest {
     }
 
     @Test(expected = Exception::class)
-    fun `getAllCards throws generic exception`(): Unit = runBlocking {
+    fun `checkIn throws generic exception`(): Unit = runBlocking {
 
         //GIVEN
-        coEvery { repository.getEvents() } throws Exception()
+        coEvery { repository.checkInEvent(getCheckInRequestDummy()) } throws Exception()
             .apply {
                 repository.checkInEvent(getCheckInRequestDummy())
             }
