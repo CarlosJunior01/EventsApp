@@ -5,8 +5,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.carlosjr.eventsapp.R
 import com.carlosjr.eventsapp.databinding.ItemListEventsBinding
-import com.carlosjr.eventsapp.presentation.model.EventsVO
-import com.squareup.picasso.Picasso
+import com.carlosjr.eventsapp.helper.extensions.formatDateDay
+import com.carlosjr.eventsapp.helper.extensions.formatDateMonth
+import com.carlosjr.eventsapp.helper.extensions.monetaryFormat
+import com.carlosjr.eventsapp.helper.extensions.setupPicassoImage
+import com.carlosjr.eventsapp.presentation.model.vo.EventsVO
 
 class EventsAdapter(
     val onClick: (EventsVO) -> Unit
@@ -29,15 +32,14 @@ class EventsAdapter(
 
         fun bind(events: EventsVO) {
             val imageUrl = events.image
+            val eventDate = events.date.toString().dropLast(LENGTH_THREE).toLong()
 
             binding.textViewEventName.text = events.title
-            binding.textViewEventDay.text = "01"
-            binding.textViewEventMonth.text = "Fev"
-            binding.textViewEventLocation.text = "6 KM"
-            Picasso.get()
-                .load(imageUrl)
-                .error(R.drawable.tech_background)
-                .into(binding.imageEvent)
+            binding.textViewEventDay.text = formatDateDay(eventDate)
+            binding.textViewEventMonth.text = formatDateMonth(eventDate)
+            binding.textViewEventPrice.text = events.price.monetaryFormat()
+
+            setupPicassoImage(image = imageUrl, error = R.drawable.tech_background, view = binding.imageEvent)
 
             binding.cardViewContainer.setOnClickListener {
                 onClick(events)
@@ -57,4 +59,8 @@ class EventsAdapter(
     }
 
     override fun getItemCount() = eventsList.size
+
+    companion object {
+        private const val LENGTH_THREE = 3
+    }
 }
