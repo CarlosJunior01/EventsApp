@@ -13,6 +13,7 @@
     <dimen name="margin_26dp">26dp</dimen>
     <dimen name="margin_32dp">32dp</dimen>
     <dimen name="margin_36dp">36dp</dimen>
+    <dimen name="margin_46dp">46dp</dimen>
     <dimen name="margin_48dp">48dp</dimen>
     <dimen name="margin_64dp">64dp</dimen>
     <dimen name="margin_108dp">108dp</dimen>
@@ -21,6 +22,9 @@
     <dimen name="margin_200dp">200dp</dimen>
     <dimen name="margin_220dp">220dp</dimen>
     <dimen name="margin_300dp">300dp</dimen>
+
+    <dimen name="radius_6">6dp</dimen>
+    <dimen name="radius_12">12dp</dimen>
 
     <dimen name="text_12sp">12sp</dimen>
     <dimen name="text_16sp">16sp</dimen>
