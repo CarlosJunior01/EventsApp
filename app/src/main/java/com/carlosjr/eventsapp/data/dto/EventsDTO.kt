@@ -1,6 +1,6 @@
 package com.carlosjr.eventsapp.data.dto
 
-import com.carlosjr.eventsapp.domain.bo.EventsBO
+import com.carlosjr.eventsapp.domain.model.bo.EventsBO
 
 data class EventsDTO(
     val date: Long,
