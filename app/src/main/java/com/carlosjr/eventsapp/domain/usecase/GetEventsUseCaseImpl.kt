@@ -1,7 +1,7 @@
 package com.carlosjr.eventsapp.domain.usecase
 
 import com.carlosjr.eventsapp.domain.model.bo.toEventsVO
-import com.carlosjr.eventsapp.domain.repository.EventsRepository
+import com.carlosjr.eventsapp.data.repository.EventsRepository
 import com.carlosjr.eventsapp.presentation.model.vo.EventsVO
 import javax.inject.Inject
 

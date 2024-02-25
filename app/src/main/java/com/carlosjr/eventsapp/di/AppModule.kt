@@ -2,7 +2,7 @@ package com.carlosjr.eventsapp.di
 
 import com.carlosjr.eventsapp.data.remote.EventsAPI
 import com.carlosjr.eventsapp.data.repository.EventsRepositoryImp
-import com.carlosjr.eventsapp.domain.repository.EventsRepository
+import com.carlosjr.eventsapp.data.repository.EventsRepository
 import com.carlosjr.eventsapp.domain.usecase.CheckInUseCase
 import com.carlosjr.eventsapp.domain.usecase.GetEventsUseCase
 import com.carlosjr.eventsapp.domain.usecase.GetEventsUseCaseImpl

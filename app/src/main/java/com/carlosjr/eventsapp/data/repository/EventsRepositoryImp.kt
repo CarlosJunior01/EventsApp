@@ -5,7 +5,6 @@ import com.carlosjr.eventsapp.data.dto.toEventsBO
 import com.carlosjr.eventsapp.data.remote.CustomNetworkError
 import com.carlosjr.eventsapp.data.remote.EventsAPI
 import com.carlosjr.eventsapp.domain.model.bo.EventsBO
-import com.carlosjr.eventsapp.domain.repository.EventsRepository
 import com.google.gson.Gson
 import com.google.gson.annotations.SerializedName
 import kotlinx.coroutines.Dispatchers

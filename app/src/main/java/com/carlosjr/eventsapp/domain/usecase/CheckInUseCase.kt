@@ -1,7 +1,7 @@
 package com.carlosjr.eventsapp.domain.usecase
 
 import com.carlosjr.eventsapp.data.dto.CheckInRequest
-import com.carlosjr.eventsapp.domain.repository.EventsRepository
+import com.carlosjr.eventsapp.data.repository.EventsRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
