@@ -9,6 +9,7 @@ Aplicativo de listagem e checkin de Eventos.
 [![Retrofit](https://img.shields.io/badge/retrofit-2.9.0-black.svg)]()
 [![OkHttp](https://img.shields.io/badge/okhttp-4.9.0-black.svg)]()
 [![Picasso](https://img.shields.io/badge/picasso-2.8.0-black.svg)]()
+[![JUnit](https://img.shields.io/badge/JUnit-4.13.2-black.svg)]()
 [![Mockk](https://img.shields.io/badge/mockk-1.12.4-black.svg)]()
 [![ViewBinding](https://img.shields.io/badge/viewbinding-4.3.0-black.svg)]()
 ![Events API](https://img.shields.io/badge/API-Events-lightgrey)
