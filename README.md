@@ -91,7 +91,7 @@ Kotlin Flow: Utilizada para fluxos assíncronos, com isso podemos retornar vári
 
 Lottie: Framework para adicionar, renderizar e controlar Animações dentro do app. Lottie é um formato de arquivo de animação de código aberto que é pequeno, de alta qualidade, interativo e pode ser manipulado em tempo de execução.
 
-[![Hilt](https://img.shields.io/badge/koin-2.41-black.svg)]()
+[![Hilt](https://img.shields.io/badge/hilt-2.41-black.svg)]()
 
 Hilt: É uma biblioteca de injeção de dependência que reduz a injeção manual de código no projeto, criando e gerenciando as instâncias provendo os módulos dentro da aplicação.
 
