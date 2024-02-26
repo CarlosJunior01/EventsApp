@@ -44,7 +44,8 @@
         android:layout_marginTop="@dimen/margin_24dp"
         android:text="@string/home_events_category"
         app:layout_constraintStart_toStartOf="@+id/guideline_left"
-        app:layout_constraintTop_toBottomOf="@+id/text_events_title" />
+        app:layout_constraintTop_toBottomOf="@+id/text_events_title"
+        android:contentDescription="@string/home_events_category_accessibility" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_events"
