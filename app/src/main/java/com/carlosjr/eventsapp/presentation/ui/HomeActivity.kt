@@ -37,7 +37,7 @@ class HomeActivity : AppCompatActivity() {
     private fun setupObserve() = with(binding) {
         eventsViewModel.eventsLiveData.observe(this@HomeActivity) { eventsVO ->
             eventsAdapter?.addEventList(eventsList = eventsVO)
-            customLoading.loadingContainer.setVisible(show = true)
+            customLoading.loadingContainer.setVisible(show = false)
         }
     }
 
