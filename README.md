@@ -19,7 +19,7 @@ Aplicativo de listagem e checkin de Eventos.
 *******
 Aplicativo Android Nativo escrito em Kotlin, consumindo Api de Eventos e processando resposta com retrofit e tratamento de concorrência com corrotinas e controle de dados observáveis LiveData e Kotlin Flow, utilizando padrão de arquitetura MVVM + Clean Architecture, com divisão de responsabilidades e separação de conceitos e desacoplamento de camadas. Injeção de dependência com Hilt. Views customizadas e nimações com Lottie. Testes unitários e Testes de interface utilizando JUnit e Espresso e tratamento de erros da aplicação.
 *******
-![image](https://github.com/CarlosJunior01/EventsApp/assets/9430430/89972a3a-9f2e-42e2-91f5-3f1294f2fc12)
+![image](https://github.com/CarlosJunior01/EventsApp/assets/9430430/d224d006-ca16-4818-9dc7-aa4be5d51239)
 *******
 ![image](https://github.com/CarlosJunior01/EventsApp/assets/9430430/c9ce7346-95c8-437d-bec2-cc3f28fd5912)
 *******
