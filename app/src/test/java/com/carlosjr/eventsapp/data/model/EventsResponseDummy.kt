@@ -1,7 +1,7 @@
 package com.carlosjr.eventsapp.data.model
 
-import com.carlosjr.eventsapp.data.dto.CheckInRequest
-import com.carlosjr.eventsapp.data.dto.EventsDTO
+import com.carlosjr.eventsapp.data.model.dto.CheckInRequest
+import com.carlosjr.eventsapp.data.model.dto.EventsDTO
 import retrofit2.Response
 
 object EventsResponseDummy {

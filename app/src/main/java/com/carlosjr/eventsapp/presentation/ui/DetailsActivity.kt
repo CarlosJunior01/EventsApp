@@ -6,7 +6,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.carlosjr.eventsapp.R
-import com.carlosjr.eventsapp.data.dto.CheckInRequest
+import com.carlosjr.eventsapp.data.model.dto.CheckInRequest
 import com.carlosjr.eventsapp.databinding.ActivityDetailsBinding
 import com.carlosjr.eventsapp.helper.Constants.SEND_INTENT_TEXT_TYPE
 import com.carlosjr.eventsapp.helper.extensions.formatDate

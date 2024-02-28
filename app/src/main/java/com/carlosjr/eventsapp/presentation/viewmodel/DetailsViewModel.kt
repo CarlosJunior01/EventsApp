@@ -3,7 +3,7 @@ package com.carlosjr.eventsapp.presentation.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.carlosjr.eventsapp.R
-import com.carlosjr.eventsapp.data.dto.CheckInRequest
+import com.carlosjr.eventsapp.data.model.dto.CheckInRequest
 import com.carlosjr.eventsapp.domain.usecase.CheckInUseCase
 import com.carlosjr.eventsapp.helper.extensions.handleTimeoutApiError
 import com.carlosjr.eventsapp.presentation.model.UiText.Companion.resourceToUiText

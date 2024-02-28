@@ -1,4 +1,4 @@
-package com.carlosjr.eventsapp.data.dto
+package com.carlosjr.eventsapp.data.model.dto
 
 data class CheckInRequest(
     val eventId: String,

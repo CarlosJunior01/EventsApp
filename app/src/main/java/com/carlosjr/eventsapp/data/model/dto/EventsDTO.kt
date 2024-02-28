@@ -1,4 +1,4 @@
-package com.carlosjr.eventsapp.data.dto
+package com.carlosjr.eventsapp.data.model.dto
 
 import com.carlosjr.eventsapp.domain.model.bo.EventsBO
 
