@@ -6,6 +6,9 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.carlosjr.eventsapp.R
+import com.carlosjr.eventsapp.data.database.AppDatabase
+import com.carlosjr.eventsapp.data.database.dao.CheckInDAO
+import com.carlosjr.eventsapp.data.database.model.CheckInEvents
 import com.carlosjr.eventsapp.data.model.dto.CheckInRequest
 import com.carlosjr.eventsapp.databinding.ActivityDetailsBinding
 import com.carlosjr.eventsapp.helper.Constants.SEND_INTENT_TEXT_TYPE
@@ -26,13 +29,18 @@ import com.carlosjr.eventsapp.presentation.model.vo.EventsVO
 import com.carlosjr.eventsapp.presentation.ui.HomeActivity.Companion.EVENTS_HOME_ACTIVITY_PARAMETERS
 import com.carlosjr.eventsapp.presentation.viewmodel.DetailsViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 @AndroidEntryPoint
 class DetailsActivity : AppCompatActivity() {
 
     private val binding by lazy { ActivityDetailsBinding.inflate(layoutInflater) }
     private val detailsViewModel: DetailsViewModel by viewModels()
+    private lateinit var appDatabase: AppDatabase
+    private lateinit var checkInDAO: CheckInDAO
     private var eventsResult: EventsVO? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,6 +53,7 @@ class DetailsActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         getExtras()
+        initDatabase()
         setupObserve()
     }
 
@@ -56,6 +65,25 @@ class DetailsActivity : AppCompatActivity() {
         }
     }
 
+    private fun initDatabase() {
+        this.appDatabase = AppDatabase.getInstance(this)
+        this.checkInDAO = appDatabase.checkInDao()
+        fetchCheckIn()
+    }
+
+    private fun fetchCheckIn() {
+        CoroutineScope(Dispatchers.IO).launch {
+            val checkIn = checkInDAO.searchAll()
+            withContext(Dispatchers.Main){
+                checkIn.forEach { checkIn ->
+                    if (checkIn.isCheckIn && checkIn.title == eventsResult?.title) {
+                        setupCheckInState()
+                    }
+                }
+            }
+        }
+    }
+
     private fun setupObserve() = lifecycleScope.launch {
             detailsViewModel.eventsStateFlow.collect { viewState ->
                 when (viewState) {
@@ -63,6 +91,8 @@ class DetailsActivity : AppCompatActivity() {
                         binding.customLoading.loadingContainer.setVisible(show = true)
                     }
                     is SuccessState -> {
+                        setupCheckInState()
+                        checkInDAO.insert(CheckInEvents(isCheckIn = true, title = eventsResult?.title ))
                         binding.customLoading.loadingContainer.setVisible(show = false)
                         binding.customDialog.setAnimationDialog(animation = R.raw.loading_success, isShow = true)
                     }
@@ -72,6 +102,11 @@ class DetailsActivity : AppCompatActivity() {
                     }
                 }
             }
+    }
+
+    private fun setupCheckInState() = with(binding) {
+        includeEventDetail.imageStateButton.setImageResource(R.drawable.ic_heart_circle_outline)
+        toast(getString(R.string.check_in_done))
     }
 
     private fun setupViews() = with(binding) {
