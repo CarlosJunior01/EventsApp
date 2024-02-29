@@ -36,5 +36,6 @@
     //Alert Messages
     <string name="enter_valid_name">Insira um nome válido.</string>
     <string name="enter_valid_email">Insira um email válido.</string>
+    <string name="check_in_done">Voce já fez check-in nesse evento!</string>
 
 </resources>
