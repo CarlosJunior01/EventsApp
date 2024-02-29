@@ -17,7 +17,7 @@ Aplicativo de listagem e checkin de Eventos.
 [![ktlint](https://img.shields.io/badge/code%20style-%E2%9D%A4-FF4081.svg)]()
 
 *******
-Aplicativo Android Nativo escrito em Kotlin, consumindo Api de Eventos e processando resposta com retrofit e tratamento de concorrência com corrotinas e controle de dados observáveis LiveData e Kotlin Flow, utilizando padrão de arquitetura MVVM + Clean Architecture, com divisão de responsabilidades e separação de conceitos e desacoplamento de camadas. Injeção de dependência com Hilt. Views customizadas e nimações com Lottie. Testes unitários e Testes de interface utilizando JUnit e Espresso e tratamento de erros da aplicação.
+Aplicativo Android Nativo escrito em Kotlin, consumindo Api de Eventos e processando resposta com retrofit e tratamento de concorrência com corrotinas e controle de dados observáveis LiveData e Kotlin Flow, utilizando padrão de arquitetura MVVM + Clean Architecture, com divisão de responsabilidades e separação de conceitos e desacoplamento de camadas. Injeção de dependência com Hilt. Persistência de dados com Jetpack Room. Views customizadas e animações com Lottie. Testes unitários e Testes de interface utilizando JUnit e Espresso e tratamento de erros da aplicação.
 *******
 ![image](https://github.com/CarlosJunior01/EventsApp/assets/9430430/d224d006-ca16-4818-9dc7-aa4be5d51239)
 *******
