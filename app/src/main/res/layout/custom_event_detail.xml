@@ -57,6 +57,16 @@
             app:layout_constraintStart_toEndOf="@+id/text_view_event_day"
             app:layout_constraintTop_toTopOf="@+id/text_view_event_day" />
 
+        <ImageView
+            android:id="@+id/image_state_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_16dp"
+            android:src="@drawable/ic_minus_circle_outline"
+            app:layout_constraintBottom_toBottomOf="@+id/image_event"
+            app:layout_constraintStart_toStartOf="parent"
+            android:importantForAccessibility="no"/>
+
         <TextView
             android:id="@+id/text_view_event_price"
             style="@style/SubTitleSansSerif_18"
