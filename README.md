@@ -31,7 +31,7 @@ Aplicativo Android Nativo escrito em Kotlin, consumindo Api de Eventos e process
 
 Para conseguir executar a aplicação basta clonar e executar o projeto desse repositório e ou ler o QRCode gerado abaixo para baixar o APK para instalaçao e execução rápida.
 
-![image](https://github.com/CarlosJunior01/EventsApp/assets/9430430/d902ea3c-460d-4140-a4c1-7ec3728633ac)
+![qrcode_app](https://github.com/CarlosJunior01/EventsApp/assets/9430430/125201c4-05c3-4b21-ae29-a4b4cbabd229)
 
 *******
 * **Unit Tests**
