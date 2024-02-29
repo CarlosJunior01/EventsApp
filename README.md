@@ -34,14 +34,23 @@ Para conseguir executar a aplicação basta clonar e executar o projeto desse re
 ![image](https://github.com/CarlosJunior01/EventsApp/assets/9430430/d902ea3c-460d-4140-a4c1-7ec3728633ac)
 
 *******
+* **Unit Tests**
+*******
+<img width="931" alt="TestesUnidade" src="https://github.com/CarlosJunior01/EventsApp/assets/9430430/15826ef5-3bb6-4072-9109-c68ac147a554">
 
+*******
+* **UI Tests**
+*******
+<img width="932" alt="TestesUI" src="https://github.com/CarlosJunior01/EventsApp/assets/9430430/c71f53fc-ab18-40f6-bfd0-8aaaaa8c93b4">
+
+*******
 * **Arquitetura MVVM + CLEAN ARCHITECTURE**
 *******
 ![image](https://user-images.githubusercontent.com/9430430/148726004-f2bf587d-ef1b-4b53-8a1e-b3fb22515c5e.png)
 
 ![image](https://user-images.githubusercontent.com/9430430/148726286-ed2c0e92-897c-4e98-8cac-71ef7430f614.png)
 
-
+*******
 **MVVM:** Tem como principal objetivo separar responsabilidades entre Views e Modelos
 Aqui temos a View que responde somente para a ViewModel, e a ViewModel não comunica diretamente com a View. A ViewModel é então uma classe intermediaria entre a View e a Model que conecta uma com a outra fazendo assim intermediação entre elas através do mecanismo de conexão Data Binding.
 
